@@ -1,6 +1,43 @@
-*******Q.5. if analysis************
+Q1 P-6 Implementation of Classification algorithm in R Programming.
+Q2 JUST AFRER P-6 .Practical Implementation of Decision Tree using R Tool
+
+********Q3 P-7 K-means clustering using R(BY CGPT)*********
+
+# Load necessary libraries
+install.packages("ggplot2")   # Install ggplot2 if not installed
+library(ggplot2)
+
+# Generate sample dataset
+set.seed(123)  # For reproducibility
+data <- data.frame(
+  x = c(rnorm(50, mean = 2, sd = 0.5), 
+        rnorm(50, mean = 6, sd = 0.5), 
+        rnorm(50, mean = 10, sd = 0.5)),
+  y = c(rnorm(50, mean = 2, sd = 0.5), 
+        rnorm(50, mean = 6, sd = 0.5), 
+        rnorm(50, mean = 10, sd = 0.5))
+)
+
+# Perform K-Means Clustering
+k <- 3  # Number of clusters
+kmeans_result <- kmeans(data, centers = k, nstart = 25)
+
+# Add cluster results to data
+data$cluster <- as.factor(kmeans_result$cluster)
+
+# Visualize the Clusters
+ggplot(data, aes(x, y, color = cluster)) +
+  geom_point(size = 3) +
+  labs(title = "K-Means Clustering in R Studio") +
+  theme_minimal()
 
 
+
+
+
+
+
+*******P.5. if analysis************
 
 HP         =1OO*50 =>ans(60)
 LP       =1OO(Total no of books) -no of books =>ans(40)
@@ -9,7 +46,7 @@ LP          =1OO-60 =>Ans(40)
 
 For total  =60*50+40*20
 
-******Q.6. Classification algorithm in R Programming******
+******P.6. Classification algorithm in R Programming******
 
 # KNN Method
 
@@ -52,3 +89,18 @@ train_data <- mtcars [sample_index, ]
 test_data <- mtcars [-sample_index, ]
 linearModel <- 1m(mpghp+drat + am, data train_data)
 summary (linearModel)
+
+
+
+
+
+#BY GRAPHALLY
+Visualize the Regression Graphically
+# Create the predictor and response variable.
+x <- c(151, 174, 138, 186, 128, 136, 179, 163, 152, 131)
+y <- c(63, 81, 56, 91, 47, 57, 76, 72, 62, 48)
+relation <- lm(y~x)
+# Give the chart file a name. png(file = "linearregression.png")
+# Plot the chart.
+plot(y,x,col = "blue",main = "Height & Weight Regression", abline(lm(x~y)),cex = 1.3,pch = 16,xlab = "Weight in Kg",ylab = "Height in cm")
+# Save the file. dev.off()
